@@ -16,18 +16,34 @@ of the given width and height. */
 
 // Elegant solution
 
-var size = 8;
+// var size = 8;
 
-var board = "";
+// var board = "";
 
-for (var y = 0; y < size; y++) {
-  for (var x = 0; x < size; x++) {
-    if ((x + y) % 2 == 0)
-      board += " ";
-    else
-      board += "#";
-  }
-  board += "\n";
-}
+// for (var y = 0; y < size; y++) {
+//   for (var x = 0; x < size; x++) {
+//     if ((x + y) % 2 == 0)
+//       board += " ";
+//     else
+//       board += "#";
+//   }
+//   board += "\n";
+// }
 
-console.log(board);
+// console.log(board);
+
+// modification for any solution
+
+        var board = "";
+        // the outer loop is for rows
+    for (var y = 0; y < 8; y++) {
+        // inner loop is for columns
+        for (var x = 0; x < 8; x++) {
+            if (x%2 == y%2)
+                board += " ";
+            else
+                board += "#";
+        }
+        board += "\n";
+    }
+    console.log(board);
