@@ -7,11 +7,24 @@ for numbers divisible by only one of those).
 (This is actually an interview question that has been claimed to weed out
 a significant percentage of programmer candidates. So if you solved it, your
 labor market value just went up.) */
-
+// My solution
 for (let i = 0; i <= 100; i++){
     if (i%3 == 0){
         console.log("Fizz");
-    }else if (i%5 == 0){
+    }
+    if (i%5 == 0){
         console.log("Buzz")
     }
+    if(i%5 == 0 && i%3==0){
+        console.log("FizzBuzz");
+    }
 }
+// Elegant solution
+for (var n = 1; n <= 100; n++) {
+    var output = "";
+    if (n % 3 == 0)
+      output += "Fizz";
+    if (n % 5 == 0)
+      output += "Buzz";
+    console.log(output || n);
+  }
