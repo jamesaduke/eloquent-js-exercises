@@ -14,6 +14,8 @@ When you have a program that generates this pattern, define a binding size
 = 8 and change the program so that it works for any size , outputting a grid
 of the given width and height. */
 
+// Elegant solution
+
 var size = 8;
 
 var board = "";
