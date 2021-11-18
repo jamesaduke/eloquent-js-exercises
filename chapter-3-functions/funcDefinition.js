@@ -47,7 +47,7 @@ function power(base, exponent) {
     }
 }
 
-// another example 
+// another example
 function findSolution(target) {
     function find(current, history) {
         if (current == target) {
@@ -58,9 +58,18 @@ function findSolution(target) {
             return find(current + 5, `(${history})+5`) ||
                    find(current * 3, `(${history}) * 3`);
         }
-        
+
     }
     return find(1, "1");
 }
 
 console.log(findSolution(48));
+
+//GROWING FUNCTIONS
+
+function printFarmIneventory(cows, chickens) {
+    let cowString = String(cows);
+    while (cowString.length < 3) {
+        cowString = "0" + cowString
+    }
+}
