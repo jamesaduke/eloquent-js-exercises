@@ -61,3 +61,48 @@ function map(array, transform) {
 
 let rtlScript = SCRIPTS.filter(s => s.direction == "rtl");
 console.log(map(rtlScript, s => s.name));
+
+/* SUMMARIZING AN ARRAY TO A SINGLE VALUE WITH REDUCE */
+function reduceComp (array, combine, start) {
+    let current = start;
+    for (let element of array){
+        current = combine(current, element);
+    }
+    return current;
+}
+
+console.log(reduceComp([1,2,3,4], (a,b)=>a+b),0);
+
+// count characters in scripts using reduce
+function characterCount(script){
+    return script.ranges.reduce((count, [from, to])=>{
+        return count + (to-from);
+    }, 0)
+}
+
+console.log(SCRIPTS.reduce
+    ((a,b) => {
+    return characterCount(a) < characterCount(b) ? b : a;
+}));
+
+/* Function for average year of origin for living and dead SCRIPTS */
+
+function averageFn(array) {
+    return array.reduce((a,b) => a+b) /array.length;
+}
+
+
+console.log(Math.round(averageFn(
+    SCRIPTS.filter(s=>s.living).map(s => s.year)
+)));
+
+console.log(Math.round(averageFn(
+    SCRIPTS.filter(s=>!s.living).map(s => s.year)
+)));
+
+// the Above 👆 all done with one big loop
+
+let total = 0, count = 0;
+for (let script of SCRIPTS) {
+
+}
